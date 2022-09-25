@@ -14,7 +14,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
@@ -28,7 +29,6 @@ import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-	private static final int REQUEST_IMAGE_CAPTURE = 672;
 	private String imageFilePath;
 	private Uri photoUri;
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 			if (photoFile != null) {
 				photoUri = FileProvider.getUriForFile(getApplicationContext(), getPackageName(), photoFile);
 				intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
-				startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+				camera_capture.launch(intent);
 			}
 		}
 	}
@@ -90,32 +90,30 @@ public class MainActivity extends AppCompatActivity {
 		return image;
 	}
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-			Bitmap bitmap = BitmapFactory.decodeFile(imageFilePath);
-			ExifInterface exif = null;
+	private ActivityResultLauncher<Intent> camera_capture = registerForActivityResult(
+			new ActivityResultContracts.StartActivityForResult(),
+			result -> {
+				Bitmap bitmap = BitmapFactory.decodeFile(imageFilePath);
+				ExifInterface exif = null;
 
-			try {
-				exif = new ExifInterface(imageFilePath);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+				try {
+					exif = new ExifInterface(imageFilePath);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 
-			int exifOrientation;
-			int exifDegree;
+				int exifOrientation;
+				int exifDegree;
 
-			if (exif != null) {
-				exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-				exifDegree = exifOrientationToDegrees(exifOrientation);
-			} else {
-				exifDegree = 0;
-			}
+				if (exif != null) {
+					exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+					exifDegree = exifOrientationToDegrees(exifOrientation);
+				} else {
+					exifDegree = 0;
+				}
 
-			((ImageView) findViewById(R.id.image_result)).setImageBitmap(rotate(bitmap, exifDegree));
-		}
-	}
+				((ImageView) findViewById(R.id.image_result)).setImageBitmap(rotate(bitmap, exifDegree));
+			});
 
 	private Bitmap rotate(Bitmap bitmap, int exifDegree) {
 		Matrix matrix = new Matrix();

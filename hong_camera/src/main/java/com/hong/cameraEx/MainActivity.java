@@ -29,8 +29,9 @@ import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-	private String imageFilePath;
+	private File photoFile;
 	private Uri photoUri;
+	private ActivityResultLauncher<Intent> camera_capture;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,31 @@ public class MainActivity extends AppCompatActivity {
 				.check();
 
 		findViewById(R.id.btn_capture).setOnClickListener(this::capture_image);
+
+		camera_capture = registerForActivityResult(
+				new ActivityResultContracts.StartActivityForResult(),
+				result -> {
+					Bitmap bitmap = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
+					ExifInterface exif = null;
+
+					try {
+						exif = new ExifInterface(photoFile.getAbsolutePath());
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+
+					int exifOrientation;
+					int exifDegree;
+
+					if (exif != null) {
+						exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+						exifDegree = exifOrientationToDegrees(exifOrientation);
+					} else {
+						exifDegree = 0;
+					}
+
+					((ImageView) findViewById(R.id.image_result)).setImageBitmap(rotate(bitmap, exifDegree));
+				});
 	}
 
 	private PermissionListener permissionListener = new PermissionListener() {
@@ -65,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
 	private void capture_image(View view) {
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		if (intent.resolveActivity(getPackageManager()) != null) {
-			File photoFile = null;
 			try {
 				photoFile = createImageFile();
 			} catch (IOException e) {
@@ -84,36 +109,8 @@ public class MainActivity extends AppCompatActivity {
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 		String imageFileName = "TEST_" + timeStamp + "_";
 		File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-		File image = File.createTempFile(
-				imageFileName, ".jpg", storageDir);
-		imageFilePath = image.getAbsolutePath();
-		return image;
+		return File.createTempFile(imageFileName, ".jpg", storageDir);
 	}
-
-	private ActivityResultLauncher<Intent> camera_capture = registerForActivityResult(
-			new ActivityResultContracts.StartActivityForResult(),
-			result -> {
-				Bitmap bitmap = BitmapFactory.decodeFile(imageFilePath);
-				ExifInterface exif = null;
-
-				try {
-					exif = new ExifInterface(imageFilePath);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-
-				int exifOrientation;
-				int exifDegree;
-
-				if (exif != null) {
-					exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-					exifDegree = exifOrientationToDegrees(exifOrientation);
-				} else {
-					exifDegree = 0;
-				}
-
-				((ImageView) findViewById(R.id.image_result)).setImageBitmap(rotate(bitmap, exifDegree));
-			});
 
 	private Bitmap rotate(Bitmap bitmap, int exifDegree) {
 		Matrix matrix = new Matrix();

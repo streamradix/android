@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.radix.garage.databinding.ActivityMainBinding;
+import com.radix.garage.dialog.DialogActivity;
 import com.radix.garage.move_topic.MoveTopicActivity;
 
 import java.util.ArrayList;
@@ -41,5 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
 	private void addTopic() {
 		data.add(new Topic("move topic", MoveTopicActivity.class));
+		data.add(new Topic("test Dialog", DialogActivity.class));
 	}
 }

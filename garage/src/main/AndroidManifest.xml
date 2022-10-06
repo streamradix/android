@@ -9,6 +9,9 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
 		<activity
+			android:name=".dialog.DialogActivity"
+			android:exported="false" />
+		<activity
 			android:name=".move_topic.MoveTopicActivity"
 			android:exported="false" />
 		<activity

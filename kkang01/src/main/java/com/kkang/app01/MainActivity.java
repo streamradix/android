@@ -40,6 +40,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void addLab() {
-
+		data.add(new Lab("Lab03_1", Lab03_1_Activity.class));
 	}
 }

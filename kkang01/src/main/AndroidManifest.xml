@@ -59,6 +59,12 @@
 		<activity
 			android:name=".lab07.Lab07_2_Activity"
 			android:exported="false" />
+		<activity
+			android:name=".lab08.Lab08_1_Activity"
+			android:exported="false" />
+		<activity
+			android:name=".lab08.ReadDBActivity"
+			android:exported="false" />
 	</application>
 
 </manifest>

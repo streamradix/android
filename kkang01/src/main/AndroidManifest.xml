@@ -56,6 +56,9 @@
 			android:name=".lab07.Lab07_1_Activity"
 			android:exported="false"
 			android:theme="@style/myTheme" />
+		<activity
+			android:name=".lab07.Lab07_2_Activity"
+			android:exported="false" />
 	</application>
 
 </manifest>

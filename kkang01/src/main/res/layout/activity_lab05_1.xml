@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".lab05.Lab05_1_Activity">
+
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/btn_vibration"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="vibration" />
+
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/btn_system_beep"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="system beep" />
+
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/btn_custom_sound"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="custom sound" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

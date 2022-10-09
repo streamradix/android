@@ -23,6 +23,9 @@
 		<activity
 			android:name=".lab03.Lab03_2_Activity"
 			android:exported="false" />
+		<activity
+			android:name=".lab03.Lab03_3_Activity"
+			android:exported="false" />
 	</application>
 
 </manifest>

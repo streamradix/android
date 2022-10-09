@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".lab03.Lab03_3_Activity">
+
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/btn_visible_true"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="visible true" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/text_visible_target"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="#FFFF0000"
+		android:padding="16dp"
+		android:text="hello world"
+		android:textColor="#FFFFFFFF"
+		android:visibility="invisible" />
+
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/btn_visible_false"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="visible false" />
+	
+</androidx.appcompat.widget.LinearLayoutCompat>

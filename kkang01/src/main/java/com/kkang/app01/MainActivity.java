@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kkang.app01.lab03.Lab03_1_Activity;
 import com.kkang.app01.lab03.Lab03_2_Activity;
+import com.kkang.app01.lab03.Lab03_3_Activity;
 
 import java.util.ArrayList;
 import java.util.function.BiConsumer;
@@ -43,5 +44,6 @@ public class MainActivity extends AppCompatActivity {
 	private void addLab() {
 		data.add(new Lab("Lab03_1", Lab03_1_Activity.class));
 		data.add(new Lab("Lab03_2", Lab03_2_Activity.class));
+		data.add(new Lab("Lab03_3", Lab03_3_Activity.class));
 	}
 }

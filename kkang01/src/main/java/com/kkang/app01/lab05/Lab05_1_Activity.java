@@ -43,7 +43,7 @@ public class Lab05_1_Activity extends AppCompatActivity implements View.OnClickL
 			Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
 			ringtone.play();
 		} else if (view == customSoundBtn) {
-			MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.fallbackring);
+			MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.lab05_fallbackring);
 			player.start();
 		}
 	}

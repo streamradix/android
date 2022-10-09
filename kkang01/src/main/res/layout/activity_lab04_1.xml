@@ -10,7 +10,7 @@
 	<androidx.appcompat.widget.AppCompatImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:src="@drawable/icon" />
+		android:src="@drawable/lab04_icon" />
 
 	<androidx.appcompat.widget.LinearLayoutCompat
 		android:layout_width="wrap_content"

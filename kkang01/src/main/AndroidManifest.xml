@@ -38,6 +38,9 @@
 		<activity
 			android:name=".lab04.Lab04_3_Activity"
 			android:exported="false" />
+		<activity
+			android:name=".lab04.Lab04_4_Activity"
+			android:exported="false" />
 	</application>
 
 </manifest>

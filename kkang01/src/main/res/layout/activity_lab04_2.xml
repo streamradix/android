@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:padding="16dp"
+	tools:context=".lab04.Lab04_2_Activity">
+
+	<androidx.appcompat.widget.AppCompatImageView
+		android:id="@+id/icon"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/icon" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_toRightOf="@id/icon"
+		android:text="홍길동"
+		android:textSize="20dp"
+		android:textStyle="bold" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/content"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/name"
+		android:layout_alignLeft="@id/name"
+		android:layout_marginTop="16dp"
+		android:text="안녕하세요. 잘 지내시지요?" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@id/name"
+		android:layout_alignParentRight="true"
+		android:text="22.09.08" />
+
+</RelativeLayout>

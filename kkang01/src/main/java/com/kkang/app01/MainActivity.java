@@ -17,6 +17,7 @@ import com.kkang.app01.lab04.Lab04_2_Activity;
 import com.kkang.app01.lab04.Lab04_3_Activity;
 import com.kkang.app01.lab04.Lab04_4_Activity;
 import com.kkang.app01.lab05.Lab05_1_Activity;
+import com.kkang.app01.lab05.Lab05_2_Activity;
 
 import java.util.ArrayList;
 import java.util.function.BiConsumer;
@@ -57,5 +58,6 @@ public class MainActivity extends AppCompatActivity {
 		data.add(new Lab("Lab04_3", Lab04_3_Activity.class));
 		data.add(new Lab("Lab04_4", Lab04_4_Activity.class));
 		data.add(new Lab("Lab05_1", Lab05_1_Activity.class));
+		data.add(new Lab("Lab05_2", Lab05_2_Activity.class));
 	}
 }

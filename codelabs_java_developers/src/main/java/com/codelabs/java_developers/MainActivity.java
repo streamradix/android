@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.codelabs.java_developers.databinding.ActivityMainBinding;
 import com.codelabs.java_developers.fundamentals.Fundamentals011;
 import com.codelabs.java_developers.fundamentals.Fundamentals012;
+import com.codelabs.java_developers.fundamentals.Fundamentals013;
 import com.codelabs.java_developers.main.MainAdapter;
 import com.codelabs.java_developers.main.MainItem;
 import com.codelabs.java_developers.main.MainListener;
@@ -46,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void appendList() {
-		list.add(new MainItem("Hello World and Log", Fundamentals011.class));
-		list.add(new MainItem("Hello Toast", Fundamentals012.class));
+		list.add(new MainItem(getString(R.string.fundamentals011), Fundamentals011.class));
+		list.add(new MainItem(getString(R.string.fundamentals012), Fundamentals012.class));
+		list.add(new MainItem(getString(R.string.fundamentals013), Fundamentals013.class));
 	}
 }

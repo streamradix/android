@@ -21,11 +21,18 @@
 
 		<activity
 			android:name=".fundamentals.Fundamentals011"
-			android:exported="false" />
+			android:exported="false"
+			android:label="@string/fundamentals011" />
 
 		<activity
 			android:name=".fundamentals.Fundamentals012"
-			android:exported="false" />
+			android:exported="false"
+			android:label="@string/fundamentals012" />
+
+		<activity
+			android:name=".fundamentals.Fundamentals013"
+			android:exported="false"
+			android:label="@string/fundamentals013" />
 
 	</application>
 

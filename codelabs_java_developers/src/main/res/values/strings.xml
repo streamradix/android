@@ -1,5 +1,12 @@
 <resources>
 	<string name="app_name">codelabs\nJava</string>
 
+	<!-- fundamentals011 -->
 	<string name="hello_world">Hello World!</string>
+
+	<!-- fundamentals012 -->
+	<string name="button_label_toast">Toast</string>
+	<string name="button_label_count">Count</string>
+	<string name="count_initial_value">0</string>
+	<string name="toast_message">Hello Toast!</string>
 </resources>

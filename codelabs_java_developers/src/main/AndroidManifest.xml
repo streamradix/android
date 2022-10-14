@@ -23,6 +23,10 @@
 			android:name=".fundamentals.Fundamentals011"
 			android:exported="false" />
 
+		<activity
+			android:name=".fundamentals.Fundamentals012"
+			android:exported="false" />
+
 	</application>
 
 </manifest>

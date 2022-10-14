@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.codelabs.java_developers.databinding.ActivityMainBinding;
+import com.codelabs.java_developers.fundamentals.Fundamentals011;
 import com.codelabs.java_developers.main.MainAdapter;
 import com.codelabs.java_developers.main.MainItem;
 import com.codelabs.java_developers.main.MainListener;
@@ -44,6 +45,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void appendList() {
-
+		list.add(new MainItem("HelloWorld", Fundamentals011.class));
 	}
 }

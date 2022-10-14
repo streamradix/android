@@ -1,0 +1,57 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+
+	/**
+	 * You should use `apply false` in the top-level build.gradle file
+	 * to add a Gradle plugin as a build dependency, but not apply it to the current (root) project.
+	 *
+	 * You should not use `apply false` in sub-projects.
+	 * For more information, see Applying external plugins with same version to subprojects.
+	 */
+
+	id 'com.android.application' version '7.3.1' apply false
+	id 'com.android.library' version '7.3.1' apply false
+	id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+}
+
+ext {
+
+	/**
+	 * Android API Simple Features
+	 *
+	 * 21 Lollipop
+	 * replace Dalvik to ART
+	 * support OpenGL ES 3.1
+	 * support material design
+	 *
+	 * 23 Marshmallow
+	 * support Runtime permission management
+	 *
+	 * 24 Nougat
+	 * improve ART Engine
+	 * support OpenGL ES 3.2
+	 *
+	 * 26 Oreo
+	 * limit Background Execution
+	 */
+
+	compileSdk = 33
+	minSdk = 24
+	targetSdk = 33
+
+	java = JavaVersion.VERSION_11
+
+	junit = '4.13.2'
+	test_ext_Junit = '1.1.3'
+	test_Espresso = '3.4.0'
+
+	core = '1.9.0'
+	appCompat = '1.5.1'
+
+	constraintlayout = '2.1.4'
+	material = '1.6.1'
+}
+
+task clean(type: Delete) {
+	delete rootProject.buildDir
+}

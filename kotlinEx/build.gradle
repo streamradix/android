@@ -1,0 +1,54 @@
+plugins {
+	id 'com.android.application'
+	id 'org.jetbrains.kotlin.android'
+}
+
+android {
+	namespace 'com.radix.kotlinEx'
+	compileSdk rootProject.ext.compileSdk
+
+	defaultConfig {
+		applicationId "com.radix.kotlinEx"
+		minSdk rootProject.ext.minSdk
+		targetSdk rootProject.ext.targetSdk
+		versionCode 1
+		versionName "1.0"
+
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+
+	compileOptions {
+		sourceCompatibility rootProject.ext.java
+		targetCompatibility rootProject.ext.java
+	}
+
+	kotlinOptions {
+		jvmTarget = rootProject.ext.java
+	}
+}
+
+dependencies {
+	/* Test */
+	testImplementation "junit:junit:$rootProject.ext.junit"
+	androidTestImplementation "androidx.test.ext:junit:$rootProject.ext.test_ext_Junit"
+	androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.test_Espresso"
+
+	/* androidx.core - kotlin */
+	implementation "androidx.core:core-ktx:$rootProject.ext.core"
+
+	/* androidx.appcompat - API Level Compatibility */
+	implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompat"
+	// For loading and tinting drawables on older versions of the platform
+	implementation "androidx.appcompat:appcompat-resources:$rootProject.ext.appCompat"
+
+	/* Design */
+	implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.constraintlayout"
+	implementation "com.google.android.material:material:$rootProject.ext.material"
+}

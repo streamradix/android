@@ -2,4 +2,7 @@
 <resources>
 	<dimen name="padding_regular">10dp</dimen>
 	<dimen name="line_spacing">5sp</dimen>
+
+	<dimen name="margin_regular">16dp</dimen>
+	<dimen name="margin_narrow">8dp</dimen>
 </resources>

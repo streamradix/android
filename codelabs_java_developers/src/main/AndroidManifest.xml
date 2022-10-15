@@ -34,6 +34,21 @@
 			android:exported="false"
 			android:label="@string/fundamentals013" />
 
+		<activity
+			android:name=".fundamentals.Fundamentals021A"
+			android:exported="false"
+			android:label="@string/fundamentals021a" />
+
+		<activity
+			android:name=".fundamentals.Fundamentals021B"
+			android:exported="false"
+			android:label="@string/fundamentals021b"
+			android:parentActivityName=".fundamentals.Fundamentals021A">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value=".fundamentals.Fundamentals021A" />
+		</activity>
+
 	</application>
 
 </manifest>

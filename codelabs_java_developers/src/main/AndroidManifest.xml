@@ -49,6 +49,11 @@
 				android:value=".fundamentals.Fundamentals021A" />
 		</activity>
 
+		<activity
+			android:name=".fundamentals.Fundamentals023A"
+			android:exported="false"
+			android:label="@string/fundamentals023a" />
+
 	</application>
 
 </manifest>

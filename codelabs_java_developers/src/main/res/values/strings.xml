@@ -23,4 +23,14 @@
 	<string name="text_header_reply">Reply Received</string>
 	<string name="button_second">Reply</string>
 	<string name="editText_second">Enter Your Reply Here</string>
+
+	<string name="fundamentals023a">Send Implicit Intent</string>
+	<string name="edittext_uri">http://developer.android.com</string>
+	<string name="button_uri">Open Website</string>
+	<string name="edittext_loc">Golden Gate Bridge</string>
+	<string name="button_loc">Open Location</string>
+	<string name="edittext_share">\'Twas brillig and the slithy toves</string>
+	<string name="button_share">Share This Text</string>
+	<string name="share_text_with">Share this text with: </string>
+
 </resources>

@@ -2,6 +2,7 @@ package com.codelabs.java_developers.fundamentals;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.codelabs.java_developers.R;
 
 public class Fundamentals021B extends AppCompatActivity {
+	private static final String LOG_TAG = Fundamentals021B.class.getSimpleName();
+
 	// set key to identify String value
 	public static final String EXTRA_REPLY = "com.codelabs.java_developers.extra.REPLY";
 
@@ -31,6 +34,45 @@ public class Fundamentals021B extends AppCompatActivity {
 		textView.setText(message);
 
 		mReply = findViewById(R.id.editText_second);
+
+		Log.d(LOG_TAG, "--- --- ---");
+		Log.d(LOG_TAG, "onCreate");
+	}
+
+	@Override
+	protected void onRestart() {
+		super.onRestart();
+		Log.d(LOG_TAG, "onRestart");
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		Log.d(LOG_TAG, "onStart");
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		Log.d(LOG_TAG, "onResume");
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		Log.d(LOG_TAG, "onPause");
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		Log.d(LOG_TAG, "onStop");
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		Log.d(LOG_TAG, "onDestroy");
 	}
 
 	public void returnReply(View view) {

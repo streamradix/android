@@ -74,6 +74,16 @@
 			android:name=".fundamentals.Fundamentals031"
 			android:exported="false" />
 
+		<activity
+			android:name=".fundamentals.Fundamentals041A"
+			android:exported="false"
+			android:label="@string/fundamentals041a" />
+
+		<activity
+			android:name=".fundamentals.Fundamentals041B"
+			android:exported="false"
+			android:label="@string/fundamentals041b" />
+
 	</application>
 
 </manifest>

@@ -13,6 +13,7 @@ import com.codelabs.java_developers.fundamentals.Fundamentals013;
 import com.codelabs.java_developers.fundamentals.Fundamentals021A;
 import com.codelabs.java_developers.fundamentals.Fundamentals023A;
 import com.codelabs.java_developers.fundamentals.Fundamentals031;
+import com.codelabs.java_developers.fundamentals.Fundamentals041A;
 import com.codelabs.java_developers.main.MainAdapter;
 import com.codelabs.java_developers.main.MainItem;
 import com.codelabs.java_developers.main.MainListener;
@@ -56,5 +57,6 @@ public class MainActivity extends AppCompatActivity {
 		list.add(new MainItem(getString(R.string.fundamentals021a), Fundamentals021A.class));
 		list.add(new MainItem(getString(R.string.fundamentals023a), Fundamentals023A.class));
 		list.add(new MainItem(getString(R.string.fundamentals031), Fundamentals031.class));
+		list.add(new MainItem(getString(R.string.fundamentals041a), Fundamentals041A.class));
 	}
 }

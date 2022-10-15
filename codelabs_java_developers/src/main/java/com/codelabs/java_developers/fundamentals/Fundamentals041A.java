@@ -11,6 +11,8 @@ import com.codelabs.java_developers.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Fundamentals041A extends AppCompatActivity {
+	public static final String EXTRA_MESSAGE = "com.codelabs.java_developers.extra.MESSAGE";
+	private String mOrderMessage = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class Fundamentals041A extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Fundamentals041A.this, Fundamentals041B.class);
+				intent.putExtra(EXTRA_MESSAGE, mOrderMessage);
 				startActivity(intent);
 			}
 		});
@@ -42,14 +45,17 @@ public class Fundamentals041A extends AppCompatActivity {
 	 * must be public, return void and have a View as its only parameter
 	 */
 	public void showDonutOrder(View view) {
-		displayToast(getString(R.string.donut_order_message));
+		mOrderMessage = getString(R.string.donut_order_message);
+		displayToast(mOrderMessage);
 	}
 
 	public void showIceCreamOrder(View view) {
-		displayToast(getString(R.string.ice_cream_order_message));
+		mOrderMessage = getString(R.string.ice_cream_order_message);
+		displayToast(mOrderMessage);
 	}
 
 	public void showFroyoOrder(View view) {
-		displayToast(getString(R.string.froyo_order_message));
+		mOrderMessage = getString(R.string.froyo_order_message);
+		displayToast(mOrderMessage);
 	}
 }

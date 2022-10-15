@@ -81,13 +81,6 @@ public class Fundamentals021A extends AppCompatActivity {
 					}
 				});
 
-		// Restore the state
-		if (savedInstanceState != null && savedInstanceState.getBoolean("reply_visible")) {
-			mReplyHeadTextView.setVisibility(View.VISIBLE);
-			mReplyTextView.setVisibility(View.VISIBLE);
-			mReplyTextView.setText(savedInstanceState.getString("reply_text"));
-		}
-
 		Log.d(LOG_TAG, "--- --- ---");
 		Log.d(LOG_TAG, "onCreate");
 	}
@@ -102,6 +95,19 @@ public class Fundamentals021A extends AppCompatActivity {
 	protected void onStart() {
 		super.onStart();
 		Log.d(LOG_TAG, "onStart");
+	}
+
+	@Override
+	protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+		Log.d(LOG_TAG, "onRestoreInstanceState");
+
+		// Restore the state
+		if (savedInstanceState.getBoolean("reply_visible")) {
+			mReplyHeadTextView.setVisibility(View.VISIBLE);
+			mReplyTextView.setVisibility(View.VISIBLE);
+			mReplyTextView.setText(savedInstanceState.getString("reply_text"));
+		}
 	}
 
 	@Override

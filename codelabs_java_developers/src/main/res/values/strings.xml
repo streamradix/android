@@ -19,4 +19,5 @@
 	<string name="fundamentals021b">Two Activities Second</string>
 	<string name="text_header">Message Received</string>
 	<string name="button_main">send</string>
+	<string name="editText_main">Enter Your message Here</string>
 </resources>

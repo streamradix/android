@@ -17,4 +17,18 @@
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent" />
 
+	<androidx.appcompat.widget.AppCompatEditText
+		android:id="@+id/editText_main"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/margin_narrow"
+		android:layout_marginEnd="@dimen/margin_narrow"
+		android:layout_marginBottom="@dimen/margin_regular"
+		android:ems="10"
+		android:hint="@string/editText_main"
+		android:inputType="textLongMessage"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/button_main"
+		app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

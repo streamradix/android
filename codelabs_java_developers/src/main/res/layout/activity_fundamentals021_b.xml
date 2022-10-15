@@ -18,4 +18,14 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/text_message"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/margin_narrow"
+		android:layout_marginTop="@dimen/margin_narrow"
+		android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/text_header" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

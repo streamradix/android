@@ -11,6 +11,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.codelabs.java_developers.R;
@@ -80,6 +81,13 @@ public class Fundamentals021A extends AppCompatActivity {
 					}
 				});
 
+		// Restore the state
+		if (savedInstanceState != null && savedInstanceState.getBoolean("reply_visible")) {
+			mReplyHeadTextView.setVisibility(View.VISIBLE);
+			mReplyTextView.setVisibility(View.VISIBLE);
+			mReplyTextView.setText(savedInstanceState.getString("reply_text"));
+		}
+
 		Log.d(LOG_TAG, "--- --- ---");
 		Log.d(LOG_TAG, "onCreate");
 	}
@@ -112,6 +120,19 @@ public class Fundamentals021A extends AppCompatActivity {
 	protected void onStop() {
 		super.onStop();
 		Log.d(LOG_TAG, "onStop");
+	}
+
+	@Override
+	protected void onSaveInstanceState(@NonNull Bundle outState) {
+		Log.d(LOG_TAG, "onSaveInstanceState");
+
+		// Save State
+		if (mReplyHeadTextView.getVisibility() == View.VISIBLE) {
+			outState.putBoolean("reply_visible", true);
+			outState.putString("reply_text", mReplyTextView.getText().toString());
+		}
+
+		super.onSaveInstanceState(outState);
 	}
 
 	@Override

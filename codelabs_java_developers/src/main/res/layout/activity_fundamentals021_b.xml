@@ -28,4 +28,29 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/text_header" />
 
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/button_second"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="@dimen/margin_regular"
+		android:layout_marginBottom="@dimen/margin_regular"
+		android:onClick="returnReply"
+		android:text="@string/button_second"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<androidx.appcompat.widget.AppCompatEditText
+		android:id="@+id/editText_second"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/margin_narrow"
+		android:layout_marginEnd="@dimen/margin_narrow"
+		android:layout_marginBottom="@dimen/margin_regular"
+		android:ems="10"
+		android:hint="@string/editText_second"
+		android:inputType="textLongMessage"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/button_second"
+		app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

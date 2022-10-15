@@ -6,6 +6,30 @@
 	android:layout_height="match_parent"
 	tools:context=".fundamentals.Fundamentals021A">
 
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/text_header_reply"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/margin_narrow"
+		android:layout_marginTop="@dimen/margin_regular"
+		android:text="@string/text_header_reply"
+		android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+		android:textStyle="bold"
+		android:visibility="invisible"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/text_message_reply"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/margin_narrow"
+		android:layout_marginTop="@dimen/margin_narrow"
+		android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+		android:visibility="invisible"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/text_header_reply" />
+
 	<androidx.appcompat.widget.AppCompatButton
 		android:id="@+id/button_main"
 		android:layout_width="wrap_content"

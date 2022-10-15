@@ -70,6 +70,10 @@
 			</intent-filter>
 		</activity>
 
+		<activity
+			android:name=".fundamentals.Fundamentals031"
+			android:exported="false" />
+
 	</application>
 
 </manifest>

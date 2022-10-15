@@ -77,7 +77,8 @@
 		<activity
 			android:name=".fundamentals.Fundamentals041A"
 			android:exported="false"
-			android:label="@string/fundamentals041a" />
+			android:label="@string/fundamentals041a"
+			android:theme="@style/AppTheme.NoActionBar" />
 
 		<activity
 			android:name=".fundamentals.Fundamentals041B"

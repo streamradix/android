@@ -33,4 +33,6 @@
 	<string name="button_share">Share This Text</string>
 	<string name="share_text_with">Share this text with: </string>
 
+	<string name="fundamentals023b">Receive Implicit Intent</string>
+	<string name="uri_label">URI: %s</string>
 </resources>
